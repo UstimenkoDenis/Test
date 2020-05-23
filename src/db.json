@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "Denis",
+            "userPassword": "12345",
+            "contacts": [
+                {
+                    "Ivan Petrov": "849748758577"
+                },
+                {
+                    "Petr Ivanov": "849748758577"
+                }
+            ]
+
+        }
+    ]
+}
