@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SiteLayoutComponent } from './site-layout.component';
+import { SiteLayoutComponent } from "./site-layout.component";
 
-describe('SiteLayoutComponent', () => {
+describe("SiteLayoutComponent", () => {
   let component: SiteLayoutComponent;
   let fixture: ComponentFixture<SiteLayoutComponent>;
 
@@ -19,7 +19,7 @@ describe('SiteLayoutComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

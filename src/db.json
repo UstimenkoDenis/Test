@@ -3,13 +3,14 @@
         {
             "id": 1,
             "userName": "Denis",
-            "userPassword": "12345",
+            "userEmail": "ustimenkodenis@mail.ru",
+            "userPassword": "123456",
             "contacts": [
                 {
                     "Ivan Petrov": "849748758577"
                 },
                 {
-                    "Petr Ivanov": "849748758577"
+                    "Petr Ivanov": "775857847948"
                 }
             ]
 
