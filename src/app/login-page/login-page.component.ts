@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+
+import { AuthService } from './../shared/services/auth.service';
 @Component({
   selector: "app-login-page",
   templateUrl: "./login-page.component.html",
@@ -8,7 +10,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 export class LoginPageComponent implements OnInit {
 
   form: FormGroup;
-  constructor() { }
+  constructor(private auth: AuthService ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -17,6 +19,20 @@ export class LoginPageComponent implements OnInit {
     })
   }
   onSubmit() {
-    
+   this.form.disable()
+    let user = this.form.value
+    this.auth.getUsers()
+      .then((users) => {
+        if(users.find(usr=>(usr.email === user.email)&&(usr.password === user.password) )) {
+           
+          console.log("Вы вошли")
+         
+          
+         } else {
+          console.log("Вы не вошли")
+          this.form.enable()
+         }
+      })             
+   
   }
 }

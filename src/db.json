@@ -1,19 +1,54 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "email": "ustimenkodenis@mail.ru",
+      "password": "123456",
+      "contacts": [
         {
-            "id": 1,
-            "userName": "Denis",
-            "userEmail": "ustimenkodenis@mail.ru",
-            "userPassword": "123456",
-            "contacts": [
-                {
-                    "Ivan Petrov": "849748758577"
-                },
-                {
-                    "Petr Ivanov": "775857847948"
-                }
-            ]
-
+          "Ivan Petrov": "849748758577"
+        },
+        {
+          "Petr Ivanov": "775857847948"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "email": "ivanpetrov@mail.ru",
+      "password": "654321",
+      "contacts": [
+        {
+          "Denis Ustimenko": "+79635560362"
+        },
+        {
+          "Petr Ivanov": "775857847948"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "email": "fvfv@vv.ru",
+      "password": "111111",
+      "contacts": []
+    },
+    {
+      "id": 4,
+      "email": "elenaustimenko396@gmail.com",
+      "password": "121212",
+      "contacts": []
+    },
+    {
+      "id": 5,
+      "email": "fopera2897@mrisemail.com",
+      "password": "111111",
+      "contacts": []
+    },
+    {
+      "id": 6,
+      "email": "UstimenkoDenis@mail.ru",
+      "password": "212121",
+      "contacts": []
+    }
+  ]
 }
