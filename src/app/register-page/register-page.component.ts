@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from "@angular/core";
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 
@@ -10,7 +11,8 @@ import { AuthService } from './../shared/services/auth.service';
 export class RegisterPageComponent implements OnInit {
 
   form: FormGroup;
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,
+              private router: Router) {
 
   }
 
@@ -22,11 +24,18 @@ export class RegisterPageComponent implements OnInit {
   }
   onSubmit() {
     this.form.disable()
+    let user = this.form.value
     this.auth.getUsers()
       .then((users) => {
-        if(!users.find(usr=>(usr.email === this.form.value.email))) {
+        if(!users.find(usr=>(usr.email === user.email))) {
            
-          this.auth.setUser(this.form.value.email, this.form.value.password) 
+          this.auth.setUser(user.email, user.password) 
+          console.log(`Новый пользователь ${user.email} создан`)
+          this.router.navigate(['/login'], {
+              queryParams: {
+                registered: true
+              }
+          })
           
         } else {
           alert("Этот пользователь уже зарегистрирован")

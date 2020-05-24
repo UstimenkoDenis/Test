@@ -45,11 +45,25 @@ export class AuthService {
         if(!response.ok){
             throw new Error('json error');
         }
+        // localStorage.setItem('auth-token', newUser)
     }
     async getUserNumber() {
         const res = await this.getResource('/users/')
         const userNumber = res.length+1;
       return userNumber;
     }
+    // setToken(token:string) {
+    //     this.token = token
+    // }
+    // getToken():string {
+    //     return this.token
+    // }
+    // isAuthenticated(): boolean {
+    //     return !!this.token
+    // }
+    // logout() {
+    //     this.setToken(null)
+    //     localStorage.clear()
+    // }
     
 }
