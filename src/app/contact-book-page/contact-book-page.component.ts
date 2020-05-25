@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-contact-book-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactBookPageComponent implements OnInit {
 
+  currentUser = JSON.parse(localStorage.getItem('user')) 
+  currentName = this.currentUser.name
+  isFilterVisible = false
   constructor() { }
 
   ngOnInit(): void {
+   
   }
-
 }

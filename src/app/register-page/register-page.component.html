@@ -7,6 +7,23 @@
         <span class="card-title">Создать аккаунт</span>
         <div class="input-field">
             <input 
+                formControlName ="name" 
+                id="name" 
+                type="text" 
+                class="validate"
+                [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+            >
+            <label for="name">Имя</label>
+            <span 
+                class="helper-text red-text"
+                *ngIf="form.get('name').invalid && form.get('name').touched"
+            >
+                <span *ngIf="form.get('name').errors['required']">Это поле не должно быть пустым</span>
+              
+            </span>
+        </div>
+        <div class="input-field">
+            <input 
                 formControlName ="email"
                 id="email"
                 type="email"
@@ -18,7 +35,7 @@
                 *ngIf="form.get('email').invalid && form.get('email').touched"
             >
                 <span *ngIf="form.get('email').errors['required']">Email не должен быть пустым</span>
-                <span *ngIf="form.get('email').errors['email']">Введите корректный email адрес </span>
+                <span *ngIf="form.get('email').errors['minlength'] && form.get('email').errors['minlength']['requiredLength']"></span>
 
             </span>
         </div>
@@ -51,4 +68,3 @@
         </button>
     </div>
 </form>
-

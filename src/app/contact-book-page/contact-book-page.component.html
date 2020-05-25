@@ -1,1 +1,15 @@
-<p>contact-book-page works!</p>
+<div class="page-title">
+    <h4>{{currentName}}. Cписок контактов</h4>
+    <button
+        (click) = "isFilterVisible = !isFilterVisible" 
+        class="btn btn-small"
+        [ngClass] = "{
+            'active': isFilterVisible
+        }"       
+    >
+        <i class="material-icons">filter_list</i>
+    </button>
+</div>
+<app-contact-filter *ngIf = "isFilterVisible"></app-contact-filter>
+
+<app-contact-list></app-contact-list>

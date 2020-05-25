@@ -24,25 +24,27 @@ export class LoginPageComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     })
 
-    this.route.queryParams.subscribe((params: Params)=>{
-      if (params['registered']){
-        // Теперь вы можете зайти в систему используя свои данные
-      } else if(params['accesDenied']){
-        // Для начала авторизуйтесь в системе
-      }
-    })
+    // this.route.queryParams.subscribe((params: Params)=>{
+    //   if (params['registered']){
+    //     // Теперь вы можете зайти в систему используя свои данные
+    //   } else if(params['accesDenied']){
+    //     // Для начала авторизуйтесь в системе
+    //   }
+    // })
   }
   onSubmit() {
    this.form.disable()
     let user = this.form.value
     this.auth.getUsers()
       .then((users) => {
+       const currentUser = users.find(usr=>(usr.email === user.email)&&(usr.password === user.password) )
         if(users.find(usr=>(usr.email === user.email)&&(usr.password === user.password) )) {
            
           console.log("Вы вошли")
-          this.router.navigate(['/overview'])
-          
-         } else {
+          this.router.navigate(['/book'])
+          const serializedUser = JSON.stringify(currentUser)
+          localStorage.setItem('user',serializedUser)
+        } else {
           console.log("Вы не вошли")
           this.form.enable()
          }

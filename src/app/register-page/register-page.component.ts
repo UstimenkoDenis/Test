@@ -18,24 +18,29 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
+      name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     })
   }
+
   onSubmit() {
     this.form.disable()
     let user = this.form.value
+    console.log(this.form.value)
     this.auth.getUsers()
       .then((users) => {
         if(!users.find(usr=>(usr.email === user.email))) {
            
-          this.auth.setUser(user.email, user.password) 
+          this.auth.setUser(user.name, user.email, user.password) 
           console.log(`Новый пользователь ${user.email} создан`)
           this.router.navigate(['/login'], {
               queryParams: {
                 registered: true
               }
+              
           })
+          
           
         } else {
           alert("Этот пользователь уже зарегистрирован")

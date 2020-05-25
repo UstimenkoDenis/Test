@@ -10,6 +10,8 @@ import { SiteLayoutComponent } from "./shared/layouts/site-layout/site-layout.co
 import { LoginPageComponent } from "./login-page/login-page.component";
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { ContactBookPageComponent } from './contact-book-page/contact-book-page.component';
+import { ContactListComponent } from './contact-book-page/contact-list/contact-list.component';
+import { ContactFilterComponent } from './contact-book-page/contact-filter/contact-filter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ContactBookPageComponent } from './contact-book-page/contact-book-page.
     AuthLayoutComponent,
     SiteLayoutComponent,
     RegisterPageComponent,
-    ContactBookPageComponent
+    ContactBookPageComponent,
+    ContactListComponent,
+    ContactFilterComponent
     
   ],
   imports: [
@@ -26,7 +30,6 @@ import { ContactBookPageComponent } from './contact-book-page/contact-book-page.
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

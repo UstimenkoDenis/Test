@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { User } from './../interfaces';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -27,13 +28,37 @@ export class AuthService {
           
     }
    
-    async setUser(email, password) {
+    async setUser(name, email, password) {
         const number = await this.getUserNumber();
         const newUser = {
             id: number,
+            name,
             email: email,
             password: password,
-            contacts: []
+            contacts: [
+                {
+                    "id": 1,
+                    "name": "Денис Устименко",
+                    "email": "ustimenkodenis@mail.ru",
+                    "phone": "+79635560362",
+                    "website": "https://github.com/UstimenkoDenis"
+                    
+                },
+                {
+                    "id": 1,
+                    "name": "Денис Устименко",
+                    "email": "ustimenkodenis@mail.ru",
+                    "phone": "+79635560362",
+                    "website": "https://github.com/UstimenkoDenis"
+                },
+                {
+                    "id": 1,
+                    "name": "Денис Устименко",
+                    "email": "ustimenkodenis@mail.ru",
+                    "phone": "+79635560362",
+                    "website": "https://github.com/UstimenkoDenis"
+                }
+            ]
         };
         const response = await fetch(`${this._apiBase}/users/`,{
             method: 'POST',
@@ -52,15 +77,7 @@ export class AuthService {
         const userNumber = res.length+1;
       return userNumber;
     }
-    // setToken(token:string) {
-    //     this.token = token
-    // }
-    // getToken():string {
-    //     return this.token
-    // }
-    // isAuthenticated(): boolean {
-    //     return !!this.token
-    // }
+       
     // logout() {
     //     this.setToken(null)
     //     localStorage.clear()

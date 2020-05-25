@@ -6,6 +6,7 @@ import {LoginPageComponent} from "./login-page/login-page.component";
 import {RegisterPageComponent} from "./register-page/register-page.component";
 import { ContactBookPageComponent } from './contact-book-page/contact-book-page.component';
 
+
 const routes: Routes = [
   {
     path: "", component: AuthLayoutComponent, children: [
@@ -18,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: "", component: SiteLayoutComponent, children: [
-      { path: "overview", component: ContactBookPageComponent }
+      { path: "book", component: ContactBookPageComponent }
     ]
   }
 ];
