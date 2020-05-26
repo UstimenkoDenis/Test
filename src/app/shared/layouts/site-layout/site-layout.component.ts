@@ -11,5 +11,8 @@ export class SiteLayoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onExit(){
+    localStorage.removeItem('user')
+  }
 
 }

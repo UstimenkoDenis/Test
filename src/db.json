@@ -87,6 +87,35 @@
           "website": "ambrose.net"
         }
       ]
+    },
+    {
+      "id": 2,
+      "name": "SIda",
+      "email": "A@A",
+      "password": "111111",
+      "contacts": [
+        {
+          "id": 1,
+          "name": "Денис Устименко",
+          "email": "ustimenkodenis@mail.ru",
+          "phone": "+79635560362",
+          "website": "https://github.com/UstimenkoDenis"
+        },
+        {
+          "id": 1,
+          "name": "Денис Устименко",
+          "email": "ustimenkodenis@mail.ru",
+          "phone": "+79635560362",
+          "website": "https://github.com/UstimenkoDenis"
+        },
+        {
+          "id": 1,
+          "name": "Денис Устименко",
+          "email": "ustimenkodenis@mail.ru",
+          "phone": "+79635560362",
+          "website": "https://github.com/UstimenkoDenis"
+        }
+      ]
     }
   ]
 }

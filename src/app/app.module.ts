@@ -12,6 +12,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { ContactBookPageComponent } from './contact-book-page/contact-book-page.component';
 import { ContactListComponent } from './contact-book-page/contact-list/contact-list.component';
 import { ContactFilterComponent } from './contact-book-page/contact-filter/contact-filter.component';
+import { ContactAddComponent } from './contact-book-page/contact-add/contact-add.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { ContactFilterComponent } from './contact-book-page/contact-filter/conta
     RegisterPageComponent,
     ContactBookPageComponent,
     ContactListComponent,
-    ContactFilterComponent
+    ContactFilterComponent,
+    ContactAddComponent
+    
     
   ],
   imports: [

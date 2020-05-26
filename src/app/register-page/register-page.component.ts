@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 import { AuthService } from './../shared/services/auth.service';
+import {MaterialService} from '../shared/classes/material.service'
 @Component({
   selector: "app-register-page",
   templateUrl: "./register-page.component.html",
@@ -27,7 +28,7 @@ export class RegisterPageComponent implements OnInit {
   onSubmit() {
     this.form.disable()
     let user = this.form.value
-    console.log(this.form.value)
+    
     this.auth.getUsers()
       .then((users) => {
         if(!users.find(usr=>(usr.email === user.email))) {
@@ -43,7 +44,7 @@ export class RegisterPageComponent implements OnInit {
           
           
         } else {
-          alert("Этот пользователь уже зарегистрирован")
+          MaterialService.toast("Этот пользователь уже зарегистрирован")
           this.form.enable()
         }
       })

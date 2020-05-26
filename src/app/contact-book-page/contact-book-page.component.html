@@ -1,5 +1,5 @@
 <div class="page-title">
-    <h4>{{currentName}}. Cписок контактов</h4>
+    <h4>{{curUserName}}. Cписок контактов</h4>
     <button
         (click) = "isFilterVisible = !isFilterVisible" 
         class="btn btn-small"
@@ -10,6 +10,14 @@
         <i class="material-icons">filter_list</i>
     </button>
 </div>
+<!--Floating button-->
+<div class="fixed-action-btn">
+    <a 
+    (click) = "isAddVisible =!isAddVisible"
+    class="btn-floating btn-large red">
+        <i class="large material-icons">add</i>
+    </a>
+</div>
 <app-contact-filter *ngIf = "isFilterVisible"></app-contact-filter>
-
+<app-contact-add *ngIf = "isAddVisible"></app-contact-add>
 <app-contact-list></app-contact-list>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
+import {UserModel} from '../shared/classes/userModel'
 
 @Component({
   selector: 'app-contact-book-page',
@@ -8,11 +9,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ContactBookPageComponent implements OnInit {
 
-  currentUser = JSON.parse(localStorage.getItem('user')) 
-  currentName = this.currentUser.name
   isFilterVisible = false
-  constructor() { }
-
+  isAddVisible = false
+  curUser = new UserModel()
+  curUserName = this.curUser.getName()
   ngOnInit(): void {
    
   }

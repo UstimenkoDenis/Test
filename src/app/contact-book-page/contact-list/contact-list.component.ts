@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {UserModel} from '../../shared/classes/userModel'
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
-  currentUser = JSON.parse(localStorage.getItem('user')) 
-  contacts = [...this.currentUser.contacts]
+ curUser = new UserModel()
+ contacts = this.curUser.getContacts()
+ constructor(){
+  this.contacts.push({id:"23"})
+ }
+     
   ngOnInit(): void {
-    
-    console.log(this.currentUser)
   }
+  
 
 }

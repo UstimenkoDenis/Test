@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router, Params, ActivatedRoute } from '@angular/router';
 
+import {MaterialService} from '../shared/classes/material.service'
 import { AuthService } from './../shared/services/auth.service';
 
 @Component({
@@ -24,13 +25,7 @@ export class LoginPageComponent implements OnInit {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     })
 
-    // this.route.queryParams.subscribe((params: Params)=>{
-    //   if (params['registered']){
-    //     // Теперь вы можете зайти в систему используя свои данные
-    //   } else if(params['accesDenied']){
-    //     // Для начала авторизуйтесь в системе
-    //   }
-    // })
+   
   }
   onSubmit() {
    this.form.disable()
@@ -42,13 +37,15 @@ export class LoginPageComponent implements OnInit {
            
           console.log("Вы вошли")
           this.router.navigate(['/book'])
-          const serializedUser = JSON.stringify(currentUser)
-          localStorage.setItem('user',serializedUser)
+           
+          localStorage.setItem('user', JSON.stringify(currentUser))
         } else {
-          console.log("Вы не вошли")
+          MaterialService.toast("Неверные данные")
+          
           this.form.enable()
          }
-      })             
+      }) 
+                  
    
   }
 }
