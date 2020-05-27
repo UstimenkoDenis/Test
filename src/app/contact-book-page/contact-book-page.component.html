@@ -31,5 +31,6 @@
 </app-contact-add>
         
 <app-contact-list 
+        (onEdit) = "editContact($event)"
         (onDelete) = "delContact($event)"
         [(contacts)] = "contacts"></app-contact-list>

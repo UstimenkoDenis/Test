@@ -60,19 +60,9 @@ export class ContactBookPageComponent implements OnInit {
     this.curUser.getContacts()
   }
 
-  editContact(id, name, email, phone) {
-
-    const index = this.curUser.contacts.findIndex(elem => elem.id === id)
-    this.curUser.contacts.splice(index,1, {
-      "id": id,
-      "name": name,
-      "email": email,
-      "phone": phone
-    })
-
-    // addContact(name, email, phone) {
-    
-    //   console.log(newContact)
-    // }
+  editContact(ev) {
+    const index = this.contacts.findIndex(elem => elem.id ===ev.id)
+    this.curUser.contacts.splice(index,1, ev)  
+    this.setCurUserState()
   }
 }
