@@ -10,6 +10,7 @@ import {UserModel} from '../../shared/classes/userModel'
 export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @Input() contacts: Object
+  @Input() visibleContacts: Object
   @Output() onSelection: EventEmitter<any> = new EventEmitter();
   @Output() onDelete:EventEmitter<any> = new EventEmitter();
   @Output() onEdit: EventEmitter<any> = new EventEmitter();
@@ -18,7 +19,7 @@ export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
   modal: MaterialInstance
 
   delete(indx){
-    const id = this.contacts[indx].id
+    const id = this.visibleContacts[indx].id
     this.onDelete.emit(id)
   }
 
@@ -46,7 +47,7 @@ export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
   submit(name, email, phone) {
     
     console.log(this.indxUser)
-    const id = this.contacts[this.indxUser].id
+    const id = this.visibleContacts[this.indxUser].id
     const modContact = {
       
       "id": id,

@@ -10,8 +10,10 @@ export class ContactFilterComponent implements OnInit {
   // @Input() nameFilter: string
   nameFilter
   @Output() onChanged = new EventEmitter<string>();
-  onChange() {
-    console.log(this.nameFilter)
+
+  onChange(name) {
+   
+    this.onChanged.emit(name)
   }
 
    ngOnInit(): void {

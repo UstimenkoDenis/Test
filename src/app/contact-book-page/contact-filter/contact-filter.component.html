@@ -2,10 +2,9 @@
     <div class="fr">
         <div class="col contact">
             <div class="input-field inline order-position-input">
-                <input [(ngModel)]="nameFilter" (ngModelChange) = "onChange" type="text">
+                <input [(ngModel)]="nameFilter" (ngModelChange) = "onChange(nameFilter)" type="text">
                 <label>Поиск по имени</label>
             </div>
         </div>     
     </div>
-    <button class="btn waves-effect wavers-light btn-small">Поиск</button>
 </div>

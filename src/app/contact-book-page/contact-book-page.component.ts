@@ -40,15 +40,26 @@ export class ContactBookPageComponent implements OnInit {
     console.log(this.contacts)
   }
 
-  nameFilter
-  getItems(){
-    // if(this.nameFilter != ""){
-    //   return this.curUser.contacts.filter(item=>item === this.nameFilter)
-    // }
-    return this.curUser.contacts  
+  onFilterContact(ev) {   
+    
+    this.visibleContacts = this.searchContacts(this.contacts, ev)
+  }
+  
+  visibleContacts = this.contacts
+
+  searchContacts(contacts, term) {
+    console.log(term)
+    
+    if(term.length === 0) {
+      return contacts
+    }
+    return  contacts.filter((contact)=>{
+        return contact.name.indexOf(term) > -1
+      })
+    
   }
 
-   ngOnInit(): void {
+  ngOnInit(): void {
    const Lcontacts = this.curUser.getContacts;
     console.log(Lcontacts)  
   }

@@ -19,13 +19,15 @@
         <i class="large material-icons">add</i>
     </a>
 </div>
-<app-contact-filter  
+<app-contact-filter 
+        (onChanged) = "onFilterContact($event)"
         *ngIf = "isFilterVisible"
 >
 </app-contact-filter>
 <app-contact-add  
         *ngIf = "isAddVisible"
         [(contacts)] = "contacts"
+        [(visibleContacts)] = "visibleContacts"
         (onAdded)="onAddContact($event)"
 >
 </app-contact-add>
@@ -33,4 +35,7 @@
 <app-contact-list 
         (onEdit) = "editContact($event)"
         (onDelete) = "delContact($event)"
-        [(contacts)] = "contacts"></app-contact-list>
+        [(contacts)] = "contacts"
+        [(visibleContacts)] = "visibleContacts"
+>
+</app-contact-list>
