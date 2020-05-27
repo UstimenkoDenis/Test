@@ -21,19 +21,23 @@ export class ContactBookPageComponent implements OnInit {
   constructor(){
   
   }
-
- setCurUserState(){
-  localStorage.setItem('user', JSON.stringify(this.curUser))
- }
-
-  onSelectContact = (ev) => { 
-    console.log(ev); 
+ 
+  setCurUserState(){
+    localStorage.setItem('user', JSON.stringify(this.curUser))
   }
 
   onAddContact(ev): void {
-   this.contacts.push(ev) 
-   console.log(this.curUser)
-   this.setCurUserState()
+   
+    this.contacts.push(ev)
+        this.setCurUserState()
+        console.log(this.contacts)
+  }
+  
+  delContact(id) {
+    const indx = this.contacts.findIndex(elem => elem.id === id)
+    this.contacts.splice(indx,1)
+    this.setCurUserState()
+    console.log(this.contacts)
   }
 
   nameFilter
@@ -45,7 +49,8 @@ export class ContactBookPageComponent implements OnInit {
   }
 
    ngOnInit(): void {
-      
+   const Lcontacts = this.curUser.getContacts;
+    console.log(Lcontacts)  
   }
 
   getName() {
@@ -55,16 +60,6 @@ export class ContactBookPageComponent implements OnInit {
     this.curUser.getContacts()
   }
 
-  delContact(id) {
-    const indx = this.curUser.contacts.findIndex(elem => elem.id === id)
-    const before = this.curUser.contacts.slice(0,indx)
-    const after = this.curUser.contacts.slice(indx+1)
-    const newContacts = [...before, ...after]
-    this.curUser.contacts = newContacts
-    
-    console.log(this.curUser.contacts)
-
-  }
   editContact(id, name, email, phone) {
 
     const index = this.curUser.contacts.findIndex(elem => elem.id === id)

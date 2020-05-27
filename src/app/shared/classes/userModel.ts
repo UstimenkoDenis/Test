@@ -8,7 +8,8 @@ export class UserModel {
       this.user = JSON.parse(localStorage.getItem('user')) 
       this.name = this.user.name  
       this.id = this.user.id
-      this.contacts = [...this.user.contacts]
+      // this.contacts = [...this.user.contacts]
+      this.contacts = this.user.contacts
     }
     getName(){
       return this.name
@@ -18,5 +19,9 @@ export class UserModel {
     }
     getContacts() {
       return this.contacts
+    }
+    setContacts(userContacts) {
+     this.contacts = userContacts
+     return this.contacts
     }
 }

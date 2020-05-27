@@ -15,7 +15,7 @@ export class ContactAddComponent implements OnInit {
   addContact(name: string, email: string, phone: string) {
     const newContact = {
       
-      "id": Object.keys(this.contacts).length + 1,
+      "id": (Object.keys(this.contacts).length + 1),
       "name": name,
       "email": email,
       "phone": phone

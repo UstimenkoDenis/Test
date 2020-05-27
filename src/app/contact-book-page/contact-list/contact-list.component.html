@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let contact of contacts ; let i = index" (click) = "onSelect(contact)">
+        <tr *ngFor = "let contact of contacts ; let i = index">
             <td>{{i+1}}</td>
             <td>{{contact.name}}</td>
             <td>{{contact.email}}</td>
@@ -18,7 +18,9 @@
                 <button class="btn btn-small cyan lighten-2">
                     <i class="material-icons">edit</i>
                 </button>
-                <button  class="btn btn-small red lighten-2">
+                <button  
+                    (click) = "delete(i)"
+                    class="btn btn-small red lighten-2">
                     <i class="material-icons">clear</i>
                 </button>
             </td>

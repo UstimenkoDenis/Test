@@ -10,19 +10,18 @@ export class ContactListComponent implements OnInit {
 
   @Input() contacts: Object
   @Output() onSelection: EventEmitter<any> = new EventEmitter();
+  @Output() onDelete:EventEmitter<any> = new EventEmitter();
 
-  onSelect(item: any) {
-    this.onSelection.emit(item);
- }
- 
-//  onSelectUser(item: any) {
-//   //here you would have item object.
-// }
-
+  delete(indx){
+    const id = this.contacts[indx].id
+    this.onDelete.emit(id)
+    console.log(id)
+  }
 
   constructor() {
 
   }
+
   ngOnInit(): void {
     console.log(this.contacts)
   }
