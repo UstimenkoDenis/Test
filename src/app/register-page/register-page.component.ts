@@ -31,10 +31,9 @@ export class RegisterPageComponent implements OnInit {
     
     this.auth.getUsers()
       .then((users) => {
-        if(!users.find(usr=>(usr.email === user.email))) {
-           
-          this.auth.setUser(user.name, user.email, user.password) 
-          console.log(`Новый пользователь ${user.email} создан`)
+        if(!users.find(usr=>(usr.email === user.email))) {  
+          MaterialService.toast("Вы зарегистрированы")         
+          this.auth.setUser(user.name, user.email, user.password)           
           this.router.navigate(['/login'], {
               queryParams: {
                 registered: true

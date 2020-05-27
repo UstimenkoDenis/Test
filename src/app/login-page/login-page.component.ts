@@ -32,16 +32,16 @@ export class LoginPageComponent implements OnInit {
     let user = this.form.value
     this.auth.getUsers()
       .then((users) => {
-       const currentUser = users.find(usr=>(usr.email === user.email)&&(usr.password === user.password) )
-        if(users.find(usr=>(usr.email === user.email)&&(usr.password === user.password) )) {
-           
-          console.log("Вы вошли")
+
+       const currentUser = users.find(usr=>(usr.email === user.email)&&(usr.password === user.password))
+
+        if(currentUser) {  
+                  
           this.router.navigate(['/book'])
-           
           localStorage.setItem('user', JSON.stringify(currentUser))
+          localStorage.setItem('isAuthenticated',JSON.stringify('1'))
         } else {
           MaterialService.toast("Неверные данные")
-          
           this.form.enable()
          }
       }) 

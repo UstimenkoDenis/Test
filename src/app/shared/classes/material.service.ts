@@ -13,19 +13,7 @@ export class MaterialService {
     M.toast({html: message})
   }
 
-  static initializeFloatingButton(ref: ElementRef) {
-    M.FloatingActionButton.init(ref.nativeElement)
-  }
-
-  static updateTextInputs() {
-    M.updateTextFields()
-  }
-
   static initModal(ref: ElementRef): MaterialInstance {
     return M.Modal.init(ref.nativeElement)
-  }
-
-  static initTooltip(ref: ElementRef): MaterialInstance {
-    return M.Tooltip.init(ref.nativeElement)
   }
 }

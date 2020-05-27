@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/classes/auth.guard';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import {AuthLayoutComponent} from "./shared/layouts/auth-layout/auth-layout.component";
@@ -18,7 +19,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "", component: SiteLayoutComponent, children: [
+    path: "", component: SiteLayoutComponent, canActivate: [AuthGuard], children: [
       { path: "book", component: ContactBookPageComponent }
     ]
   }

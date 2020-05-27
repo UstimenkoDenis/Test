@@ -1,13 +1,12 @@
 import {MaterialInstance, MaterialService } from './../../shared/classes/material.service';
 import { Component, EventEmitter, OnInit, Input, Output, ViewChild, ElementRef, OnDestroy, AfterViewInit} from '@angular/core';
 
-import {UserModel} from '../../shared/classes/userModel'
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.scss']
 })
-export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
+export class ContactListComponent implements OnDestroy, AfterViewInit {
 
   @Input() contacts: Object
   @Input() visibleContacts: Object
@@ -23,9 +22,6 @@ export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.onDelete.emit(id)
   }
 
-  ngOnInit(): void {
-    console.log(this.contacts)
-  }
   ngOnDestroy() {
     this.modal.destroy()
   }
@@ -37,16 +33,13 @@ export class ContactListComponent implements OnInit, OnDestroy, AfterViewInit {
   openModal(name, indx) {
     this.indxUser = indx
     this.usrName = name
-    console.log(name)
     this.modal.open()
-
   }
   indxUser:number
   usrName: string
 
   submit(name, email, phone) {
     
-    console.log(this.indxUser)
     const id = this.visibleContacts[this.indxUser].id
     const modContact = {
       

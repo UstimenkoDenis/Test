@@ -4,6 +4,7 @@ export class UserModel {
     id   
     name
     contacts
+    
     constructor() {
       this.user = JSON.parse(localStorage.getItem('user')) 
       this.name = this.user.name  

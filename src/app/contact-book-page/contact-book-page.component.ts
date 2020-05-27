@@ -9,7 +9,7 @@ import { templateJitUrl } from '@angular/compiler';
   templateUrl: './contact-book-page.component.html',
   styleUrls: ['./contact-book-page.component.scss']
 })
-export class ContactBookPageComponent implements OnInit {
+export class ContactBookPageComponent {
 
   curUser = new UserModel();
   contacts = this.curUser.contacts;
@@ -29,15 +29,13 @@ export class ContactBookPageComponent implements OnInit {
   onAddContact(ev): void {
    
     this.contacts.push(ev)
-        this.setCurUserState()
-        console.log(this.contacts)
+    this.setCurUserState()
   }
   
   delContact(id) {
     const indx = this.contacts.findIndex(elem => elem.id === id)
     this.contacts.splice(indx,1)
     this.setCurUserState()
-    console.log(this.contacts)
   }
 
   onFilterContact(ev) {   
@@ -48,8 +46,7 @@ export class ContactBookPageComponent implements OnInit {
   visibleContacts = this.contacts
 
   searchContacts(contacts, term) {
-    console.log(term)
-    
+        
     if(term.length === 0) {
       return contacts
     }
@@ -57,11 +54,6 @@ export class ContactBookPageComponent implements OnInit {
         return contact.name.indexOf(term) > -1
       })
     
-  }
-
-  ngOnInit(): void {
-   const Lcontacts = this.curUser.getContacts;
-    console.log(Lcontacts)  
   }
 
   getName() {

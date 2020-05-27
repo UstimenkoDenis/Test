@@ -1,9 +1,28 @@
 <!--SIDEBAR-->
 <ul class="sidenav sidenav-fixed a-sidenav">
     <h4>Кабинет</h4>
-      <li (click) = "onExit()" class="bold last"><a href="#" class="waves-effect waves-orange">Выйти</a></li>
+      <li (click) = "saveOrNo()" class="bold last"><a class="waves-effect waves-orange">Выйти</a></li>
 </ul>
 <!-- Main -->
 <main class="content">
     <router-outlet></router-outlet>
 </main>
+
+<div #saveModal class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4 class="mb1">Сохранить изменения?</h4>
+    </div>
+    <div class="modal-footer">
+        <button 
+            (click) = "onSave()"
+            class="modal-action waves-effect waves-black btn btn-flat"
+        >Сохранить
+        </button>
+        <button
+            (click) = "dontSave()"
+            class="modal-action waves-effect waves-black btn btn-flat"
+        >Не сохранять
+        </button>
+    </div>
+</div>
+
