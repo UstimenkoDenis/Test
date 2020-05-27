@@ -9,17 +9,25 @@
     </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let contact of contacts; let i = index">
-            <td>{{contact.id}}</td>
+        <tr *ngFor = "let contact of contacts ; let i = index" (click) = "onSelect(contact)">
+            <td>{{i+1}}</td>
             <td>{{contact.name}}</td>
             <td>{{contact.email}}</td>
             <td>{{contact.phone}}</td>
             <td>
-                <button class="btn btn-small grey darken-1">
-                    <i class="material-icons">open_in_new</i>
+                <button class="btn btn-small cyan lighten-2">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button  class="btn btn-small red lighten-2">
+                    <i class="material-icons">clear</i>
                 </button>
             </td>
+            
+               
+            
         </tr> 
+         
+       
     </tbody>
     
 </table>

@@ -2,22 +2,22 @@
     <div class="fr">
         <div class="col contact">
             <div class="input-field inline order-position-input">
-                <input type="text">
-                <label for="number">Имя</label>
+                <input #name type="text">
+                <label >Имя</label>
             </div>
         </div>
         <div class="col filter-pickers">
             <div class="input-field">
-                <input type="text" class="datepicker">
+                <input #email type="text">
                 <label>Email</label>
             </div>
 
             <div class="input-field">
-                <input type="text" class="datepicker">
+                <input #phone type="text">
                 <label>Номер</label>
             </div>
         </div>
     </div>
 
-    <button class="btn waves-effect wavers-light btn-small">Добавить</button>
+    <button (click)="addContact(name.value, email.value, phone.value)" class="btn waves-effect wavers-light btn-small">Добавить</button>
 </div>

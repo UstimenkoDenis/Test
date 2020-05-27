@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -9,8 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class ContactAddComponent implements OnInit {
 
   constructor() { }
+  @Input() contacts: Object
+  @Output() onAdded: EventEmitter<any> = new EventEmitter()
 
-  ngOnInit(): void {
+  addContact(name: string, email: string, phone: string) {
+    const newContact = {
+      
+      "id": Object.keys(this.contacts).length + 1,
+      "name": name,
+      "email": email,
+      "phone": phone
+    }
+    this.onAdded.emit(newContact);
   }
 
+  
+  ngOnInit(): void {
+  }
+ 
 }

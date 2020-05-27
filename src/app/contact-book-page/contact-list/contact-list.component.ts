@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 import {UserModel} from '../../shared/classes/userModel'
 @Component({
@@ -8,14 +8,23 @@ import {UserModel} from '../../shared/classes/userModel'
 })
 export class ContactListComponent implements OnInit {
 
- curUser = new UserModel()
- contacts = this.curUser.getContacts()
- constructor(){
-  this.contacts.push({id:"23"})
+  @Input() contacts: Object
+  @Output() onSelection: EventEmitter<any> = new EventEmitter();
+
+  onSelect(item: any) {
+    this.onSelection.emit(item);
  }
-     
-  ngOnInit(): void {
+ 
+//  onSelectUser(item: any) {
+//   //here you would have item object.
+// }
+
+
+  constructor() {
+
   }
-  
+  ngOnInit(): void {
+    console.log(this.contacts)
+  }
 
 }

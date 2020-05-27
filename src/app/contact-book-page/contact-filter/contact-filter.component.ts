@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-filter',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-filter.component.scss']
 })
 export class ContactFilterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+ 
+  // @Input() nameFilter: string
+  nameFilter
+  @Output() onChanged = new EventEmitter<string>();
+  onChange() {
+    console.log(this.nameFilter)
   }
 
+   ngOnInit(): void {
+
+  }
+  
 }

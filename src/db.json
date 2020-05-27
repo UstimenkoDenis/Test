@@ -9,111 +9,62 @@
         {
           "id": 1,
           "name": "Leanne Graham",
-          "username": "Bret",
           "email": "Sincere@april.biz",
-          "phone": "1-770-736-8031 x56442",
-          "website": "hildegard.org"
+          "phone": "1-770-736-8031 x56442"
         },
         {
           "id": 2,
           "name": "Ervin Howell",
-          "username": "Antonette",
           "email": "Shanna@melissa.tv",
-          "phone": "010-692-6593 x09125",
-          "website": "anastasia.net"
+          "phone": "010-692-6593 x09125"         
         },
         {
           "id": 3,
-          "name": "Clementine Bauch",
-          "username": "Samantha",
+          "name": "Clementine Bauch",         
           "email": "Nathan@yesenia.net",
-          "phone": "1-463-123-4447",
-          "website": "ramiro.info"
+          "phone": "1-463-123-4447"          
         },
         {
           "id": 4,
-          "name": "Patricia Lebsack",
-          "username": "Karianne",
+          "name": "Patricia Lebsack",         
           "email": "Julianne.OConner@kory.org",
-          "phone": "493-170-9623 x156",
-          "website": "kale.biz"
+          "phone": "493-170-9623 x156"
         },
         {
           "id": 5,
-          "name": "Chelsey Dietrich",
-          "username": "Kamren",
+          "name": "Chelsey Dietrich",         
           "email": "Lucio_Hettinger@annie.ca",
-          "phone": "(254)954-1289",
-          "website": "demarco.info"
+          "phone": "(254)954-1289"        
         },
         {
           "id": 6,
-          "name": "Mrs. Dennis Schulist",
-          "username": "Leopoldo_Corkery",
+          "name": "Mrs. Dennis Schulist",     
           "email": "Karley_Dach@jasper.info",
-          "phone": "1-477-935-8478 x6430",
-          "website": "ola.org"
+          "phone": "1-477-935-8478 x6430"         
         },
         {
           "id": 7,
-          "name": "Kurtis Weissnat",
-          "username": "Elwyn.Skiles",
+          "name": "Kurtis Weissnat",       
           "email": "Telly.Hoeger@billy.biz",
-          "phone": "210.067.6132",
-          "website": "elvis.io"
+          "phone": "210.067.6132"         
         },
         {
           "id": 8,
-          "name": "Nicholas Runolfsdottir V",
-          "username": "Maxime_Nienow",
+          "name": "Nicholas Runolfsdottir V",          
           "email": "Sherwood@rosamond.me",
-          "phone": "586.493.6943 x140",
-          "website": "jacynthe.com"
+          "phone": "586.493.6943 x140"         
         },
         {
           "id": 9,
-          "name": "Glenna Reichert",
-          "username": "Delphine",
+          "name": "Glenna Reichert",        
           "email": "Chaim_McDermott@dana.io",
-          "phone": "(775)976-6794 x41206",
-          "website": "conrad.com"
+          "phone": "(775)976-6794 x41206"          
         },
         {
           "id": 10,
-          "name": "Clementina DuBuque",
-          "username": "Moriah.Stanton",
+          "name": "Clementina DuBuque",         
           "email": "Rey.Padberg@karina.biz",
-          "phone": "024-648-3804",
-          "website": "ambrose.net"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "SIda",
-      "email": "A@A",
-      "password": "111111",
-      "contacts": [
-        {
-          "id": 1,
-          "name": "Денис Устименко",
-          "email": "ustimenkodenis@mail.ru",
-          "phone": "+79635560362",
-          "website": "https://github.com/UstimenkoDenis"
-        },
-        {
-          "id": 1,
-          "name": "Денис Устименко",
-          "email": "ustimenkodenis@mail.ru",
-          "phone": "+79635560362",
-          "website": "https://github.com/UstimenkoDenis"
-        },
-        {
-          "id": 1,
-          "name": "Денис Устименко",
-          "email": "ustimenkodenis@mail.ru",
-          "phone": "+79635560362",
-          "website": "https://github.com/UstimenkoDenis"
+          "phone": "024-648-3804"         
         }
       ]
     }
