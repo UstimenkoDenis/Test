@@ -46,7 +46,7 @@ export class ContactBookPageComponent {
   
 
   searchContacts(contacts, term) {
-       console.log(this.visibleContacts) 
+       
     if(term.length === 0) {
       return contacts
     }
