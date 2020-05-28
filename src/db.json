@@ -125,6 +125,76 @@
           "website": "https://github.com/UstimenkoDenis"
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "Денис",
+      "email": "mail@mail.ru",
+      "password": "111111",
+      "contacts": [
+        {
+          "id": 1,
+          "name": "Денис",
+          "email": "mail@mail.ru",
+          "phone": "123456"
+        },
+        {
+          "id": 3,
+          "name": "Денис Устименко",
+          "email": "ustimenkodenis@mail.ru",
+          "phone": "+79635560362",
+          "website": "https://github.com/UstimenkoDenis"
+        }
+      ],
+      "user": {
+        "id": 4,
+        "name": "Денис",
+        "email": "mail@mail.ru",
+        "password": "111111",
+        "contacts": [
+          {
+            "id": 1,
+            "name": "Денис",
+            "email": "mail@mail.ru",
+            "phone": "123456"
+          },
+          {
+            "id": 3,
+            "name": "Денис Устименко",
+            "email": "ustimenkodenis@mail.ru",
+            "phone": "+79635560362",
+            "website": "https://github.com/UstimenkoDenis"
+          }
+        ],
+        "user": {
+          "id": 4,
+          "name": "Денис",
+          "email": "mail@mail.ru",
+          "password": "111111",
+          "contacts": [
+            {
+              "id": 1,
+              "name": "Денис",
+              "email": "mail@mail.ru",
+              "phone": "123456"
+            },
+            {
+              "id": 2,
+              "name": "Денис Устименко",
+              "email": "ustimenkodenis@mail.ru",
+              "phone": "+79635560362",
+              "website": "https://github.com/UstimenkoDenis"
+            },
+            {
+              "id": 3,
+              "name": "Денис Устименко",
+              "email": "ustimenkodenis@mail.ru",
+              "phone": "+79635560362",
+              "website": "https://github.com/UstimenkoDenis"
+            }
+          ]
+        }
+      }
     }
   ]
 }

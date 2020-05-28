@@ -1,3 +1,18 @@
+Запуск приложения.
+1. Должен быть установлен редактор кода (например VS CODE https://code.visualstudio.com/)
+2. На компьютере должен быть установлен nodejs (Если его нет, пройдите по ссылке https://nodejs.org/en/)
+3. Создайте папку для приложения на диске, далее на GitHub в папке с приложением нажмите
+
+
+
+
+
+
+
+
+
+
+
 # NgTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
