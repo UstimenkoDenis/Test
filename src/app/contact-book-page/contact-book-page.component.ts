@@ -13,7 +13,7 @@ export class ContactBookPageComponent {
 
   curUser = new UserModel();
   contacts = this.curUser.contacts;
-  
+  visibleContacts = this.contacts
 
   isFilterVisible = false
   isAddVisible = false
@@ -43,10 +43,10 @@ export class ContactBookPageComponent {
     this.visibleContacts = this.searchContacts(this.contacts, ev)
   }
   
-  visibleContacts = this.contacts
+  
 
   searchContacts(contacts, term) {
-        
+       console.log(this.visibleContacts) 
     if(term.length === 0) {
       return contacts
     }

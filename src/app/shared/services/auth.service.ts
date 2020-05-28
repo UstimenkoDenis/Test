@@ -53,12 +53,14 @@ export class AuthService {
                 }
             ]
         };
+        console.log(newUser)
         const response = await fetch(`${this._apiBase}/users/`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(newUser)
+           
         });
         if(!response.ok){
             throw new Error('json error');
@@ -69,12 +71,16 @@ export class AuthService {
         const userNumber = res.length+1;
       return userNumber;
     }
+    async getSaveNumber() {
+        const res = await this.getResource('/users/')
+        const saveNumber = res.length;
+      return saveNumber;
+    }
     
     async saveUser (saved) {
-        console.log(saved)
-
-        const response = await fetch(`${this._apiBase}/users/`,{
-            method: 'POST',
+        
+    const response = await fetch(`${this._apiBase}/users/${saved.id}`,{
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },

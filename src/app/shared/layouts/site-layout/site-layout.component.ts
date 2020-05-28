@@ -31,8 +31,10 @@ export class SiteLayoutComponent implements OnDestroy, AfterViewInit {
   }
   onSave() { 
     const savedUser = JSON.parse(localStorage.getItem('user')) 
+    // const array = [{"1":"1"},{"2":"2"}]
     this.auth.saveUser(savedUser)
-    this.router.navigate(['/login'])
+      
+    this.onExit()
     this.saveModal.close()   
   }
 
