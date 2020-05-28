@@ -30,14 +30,16 @@ export class ContactBookPageComponent {
    
     this.contacts.push(ev)
     this.setCurUserState()
+    this.visibleContacts = this.contacts
   }
   
   delContact(id) {
     const indx = this.contacts.findIndex(elem => elem.id === id)
     this.contacts.splice(indx,1)
     this.setCurUserState()
+    this.visibleContacts = this.contacts
   }
-
+  
   onFilterContact(ev) {   
     
     this.visibleContacts = this.searchContacts(this.contacts, ev)
@@ -67,5 +69,6 @@ export class ContactBookPageComponent {
     const index = this.contacts.findIndex(elem => elem.id ===ev.id)
     this.curUser.contacts.splice(index,1, ev)  
     this.setCurUserState()
+    this.visibleContacts = this.contacts
   }
 }
